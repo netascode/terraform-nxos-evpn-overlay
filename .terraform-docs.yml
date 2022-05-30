@@ -1,0 +1,44 @@
+version: '>= 0.14.0'
+
+formatter: markdown table
+
+content: |-
+  [![Tests](https://github.com/netascode/terraform-nxos-evpn-ospf-underlay/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-nxos-evpn-ospf-underlay/actions/workflows/test.yml)
+
+  # Terraform Cisco NX-OS EVPN Overlay Module
+
+  This module can manage a Cisco Nexus 9000 EVPN fabric overlay.
+
+  The following assumptions have been made:
+
+  - A working underlay network including VTEP loopbacks is pre-configured (e.g., using the [EVPN OSPF Underlay Terraform Module](https://registry.terraform.io/modules/netascode/evpn-ospf-underlay/nxos))
+  - A single BGP AS is used for all devices with spines acting as route reflectors
+  - All services will be provisioned on all leafs
+  - No L2 or L3 access interfaces will be provisioned
+  - A `l3_service` refers to a single VRF and L3 VNI
+  - A `l2_service` refers to a single L2 VNI with or without an SVI (VLAN interface)
+  - An SVI (VLAN interface) will be provisioned as an anycast gateway on all leafs
+  - If no `ipv4_multicast_group` is configured ingress replication will be used
+
+  ## Examples
+
+  ```hcl
+  {{ include "./examples/complete/main.tf" }}
+  ```
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  {{ .Resources }}
+
+output:
+  file: README.md
+  mode: replace
+
+sort:
+  enabled: false
