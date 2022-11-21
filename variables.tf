@@ -82,7 +82,6 @@ variable "l3_services" {
   }
 }
 
-
 variable "l2_services" {
   description = "List of L2 services. `id` is the access VLAN ID. If no `ipv4_multicast_group` is specified, ingress replication will be used."
   type = list(object({

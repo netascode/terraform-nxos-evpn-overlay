@@ -1,5 +1,4 @@
 locals {
-  all                  = setunion(var.leafs, var.spines)
   leaf_l2_services     = { for l in setproduct(var.leafs, var.l2_services) : "${l[0]}/${l[1].id}" => l }
   leaf_l2_services_svi = { for l in setproduct(var.leafs, var.l2_services) : "${l[0]}/${l[1].id}" => l if l[1].ipv4_address != null }
   leaf_l3_services     = { for l in setproduct(var.leafs, var.l3_services) : "${l[0]}/${l[1].id}" => l }

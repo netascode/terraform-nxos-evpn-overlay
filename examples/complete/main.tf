@@ -1,6 +1,6 @@
 module "nxos_evpn_overlay" {
   source  = "netascode/evpn-overlay/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.2.0"
 
   leafs                = ["LEAF-1", "LEAF-2"]
   spines               = ["SPINE-1", "SPINE-2"]

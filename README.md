@@ -21,7 +21,7 @@ The following assumptions have been made:
 ```hcl
 module "nxos_evpn_overlay" {
   source  = "netascode/evpn-overlay/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.2.0"
 
   leafs                = ["LEAF-1", "LEAF-2"]
   spines               = ["SPINE-1", "SPINE-2"]
@@ -91,7 +91,7 @@ module "nxos_evpn_overlay" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_nxos"></a> [nxos](#requirement\_nxos) | >= 0.3.19 |
 
 ## Providers

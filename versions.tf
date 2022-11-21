@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.1.0"
+  required_version = ">= 1.3.0"
 
   required_providers {
     nxos = {
@@ -7,6 +7,4 @@ terraform {
       version = ">= 0.3.19"
     }
   }
-
-  experiments = [module_variable_optional_attrs]
 }
