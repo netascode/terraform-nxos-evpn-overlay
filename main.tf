@@ -6,7 +6,7 @@ locals {
 
 module "nxos_bgp_leaf" {
   source  = "netascode/bgp/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.3.0"
 
   for_each = var.leafs
 
@@ -43,7 +43,7 @@ module "nxos_bgp_leaf" {
 
 module "nxos_bgp_spine" {
   source  = "netascode/bgp/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.3.0"
 
   for_each = var.spines
 
@@ -81,7 +81,7 @@ module "nxos_bgp_spine" {
 
 module "nxos_vrf" {
   source  = "netascode/vrf/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.3.0"
 
   for_each = local.leaf_l3_services
 
@@ -111,7 +111,7 @@ resource "nxos_bridge_domain" "l3_vlan" {
 
 module "nxos_interface_vlan_l3" {
   source  = "netascode/interface-vlan/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.2.0"
 
   for_each = local.leaf_l3_services
 
@@ -124,7 +124,7 @@ module "nxos_interface_vlan_l3" {
 
 module "nxos_evpn" {
   source  = "netascode/evpn/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.3.0"
 
   for_each = var.leafs
 
@@ -150,7 +150,7 @@ resource "nxos_bridge_domain" "l2_vlan" {
 
 module "nxos_interface_vlan_l2" {
   source  = "netascode/interface-vlan/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.2.0"
 
   for_each = local.leaf_l2_services_svi
 
@@ -163,7 +163,7 @@ module "nxos_interface_vlan_l2" {
 
 module "nxos_fabric_forwarding" {
   source  = "netascode/fabric-forwarding/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.3.0"
 
   for_each = var.leafs
 
@@ -180,7 +180,7 @@ module "nxos_fabric_forwarding" {
 
 module "nxos_interface_nve" {
   source  = "netascode/interface-nve/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.3.0"
 
   for_each = var.leafs
 

@@ -3,8 +3,8 @@ terraform {
 
   required_providers {
     nxos = {
-      source  = "netascode/nxos"
-      version = ">= 0.3.19"
+      source  = "CiscoDevNet/nxos"
+      version = ">= 0.5.0"
     }
   }
 }
